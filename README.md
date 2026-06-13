@@ -1,132 +1,429 @@
 # js-1
-💡
-1. JavaScript чист?
-1
-Забони барномасозӣ барои веб
-HTML сохтор месозад, CSS зебо мекунад, JS вебсайтро зинда мекунад — тугмаҳо, анимация, маълумот.
+JavaScript — Полное руководство
 
-2
-Ҳама ҷо кор мекунад
-Браузер, сервер (Node.js), телефон (React Native), дeskтоп (Electron) — ҳама ҷо JS истифода мешавад.
 
-⚡ JS-ро Brendan Eich дар 10 рӯз навишт — соли 1995!
-📦
-2. Variables — Тағирёбандаҳо
-var
-var — кӯҳна, истифода набар
-Аввалин роҳ, аммо мушкилот дорад. Дар лоиҳаҳои қадима мебинӣ.
+Всё о JavaScript от начала до конца — шаг за шагом
 
-let
-let — тағйир меёбад
-Агар қиматаш баъдан тағйир меёбад — let истифода бар.
 
-const
-const — доимӣ, тағйир намеёбад
-Ҳамеша const истифода бар, агар тағйир лозим набошад.
 
-var ism = "Fotima"; // кӯҳна let sin = 20; // тағйир меёбад const PI = 3.14; // доимӣ sin = 21; // ✅ кор мекунад PI = 3; // ❌ хато!
-🗂️
-3. Data Types — Намудҳои маълумот
-Number
-Рақамҳо
 
+📌 Содержание
+
+
+Что такое JavaScript
+Переменные — Variables
+Типы данных — Data Types
+Операторы — Operators
+Условия — if / else / switch
+Циклы — Loops
+Функции — Functions
+Массивы — Arrays
+Объекты — Objects
+DOM — управление HTML
+События — Events
+Async / Await
+ES6+ — современные возможности
+Путь обучения — Roadmap
+
+
+
+1. Что такое JavaScript
+
+JavaScript — язык программирования для веба.
+
+
+HTML создаёт структуру
+CSS делает красиво
+JS оживляет сайт — кнопки, анимации, данные
+
+
+JavaScript работает везде:
+
+СредаИнструментБраузерChrome, Firefox, SafariСерверNode.jsТелефонReact NativeДесктопElectron
+
+
+⚡ JavaScript создал Brendan Eich за 10 дней в 1995 году.
+
+
+
+
+2. Переменные — Variables
+
+Три способа объявить переменную:
+
+jsvar ism = "Fotima";   // устарело
+let yosh = 20;        // меняется
+const PI = 3.14;      // постоянная
+
+Ключевое словоМеняется?Область видимостиИспользовать?var✅функция❌ устарелоlet✅блок✅ даconst❌блок✅ по умолчанию
+
+
+💡 Всегда используй const. Переходи на let только если значение нужно менять.
+
+
+
+
+3. Типы данных — Data Types
+
+js// Number — числа
 let x = 42;
 let y = 3.14;
-String
-Матн
 
-let s = "Салом";
-let t = 'JS';
-Boolean
-Рост / дурӯғ
+// String — текст
+let ism = "Fotima";
+let shahar = 'Dushanbe';
+let jumlа = `Привет, ${ism}!`;  // шаблон
 
-let a = true;
-let b = false;
-Array
-Рӯйхат
+// Boolean — да / нет
+let faol = true;
+let band = false;
 
-let arr = [1, 2, 3];
-Object
-Объект
+// Array — список
+let mevalar = ["себ", "нок", "анор"];
 
-{ism: "Ali",
-sin: 25}
-Null / Undefined
-Холӣ / муайян нашуда
+// Object — объект
+let talaba = { ism: "Ali", yosh: 22 };
 
-let x = null;
-let y;
-typeof оператор намудро нишон медиҳад: typeof "salom" → "string"
-➕
-4. Operators — Амалиётҳо
-// Арифметикӣ 5 + 3 // 8 10 - 4 // 6 4 * 3 // 12 10 / 2 // 5 10 % 3 // 1 (боқимонда) // Муқоиса 5 == "5" // true (нопок) 5 === "5" // false (тоза ✅) 5 !== 3 // true 5 > 3 // true // Мантиқӣ true && false // false (ва) true || false // true (ё) !true // false (не)
-🔀
-5. Шартҳо — if / else / switch
-let bal = 85; if (bal >= 90) { console.log("Аъло!"); } else if (bal >= 70) { console.log("Хуб!"); } else { console.log("Кӯшиш кун!"); } // Ternary — кӯтоҳ let natija = bal >= 70 ? "Гузашт" : "Нагузашт";
-// switch let kun = "Душанбе"; switch (kun) { case "Душанбе": console.log("Аввали ҳафта"); break; case "Ҷумъа": console.log("Охири ҳафта"); break; default: console.log("Рӯзи дигар"); }
-🔁
-6. Давраҳо — Loops
-// for loop for (let i = 0; i < 5; i++) { console.log(i); // 0, 1, 2, 3, 4 } // while loop let i = 0; while (i < 3) { console.log(i); i++; } // for...of — массив учун const мевахо = ["себ", "нок", "анор"]; for (let мева of мевахо) { console.log(мева); } // for...in — объект учун const obj = {a: 1, b: 2}; for (let kalit in obj) { console.log(kalit, obj[kalit]); }
-⚙️
-7. Функсияҳо — Functions
-1
-Функсияи оддӣ
-function сором(ism) { return "Салом, " + ism + "!"; } console.log(сором("Fotima")); // Салом, Fotima!
-2
-Arrow Function — муосир ва кӯтоҳ
-const сором = (ism) => "Салом, " + ism + "!"; // Чанд сатр const ҷамъ = (a, b) => { return a + b; };
-3
-Default параметрҳо
-function хуш омадед(ism = "Меҳмон") { return "Хуш омадед, " + ism; } хуш омадед(); // Хуш омадед, Меҳмон хуш омадед("Ahmad"); // Хуш омадед, Ahmad
-📋
-8. Arrays — Массивҳо
-const мевахо = ["себ", "нок", "анор"]; мевахо[0] // "себ" мевахо.length // 3 мевахо.push("лиму") // охирга қӯшади мевахо.pop() // охирини олади мевахо.shift() // аввалинро олади мевахо.unshift("узум") // аввалга қӯшади // Муҳимтарин методҳо [1,2,3].map(x => x * 2) // [2,4,6] [1,2,3,4].filter(x => x > 2) // [3,4] [1,2,3].reduce((s,x) => s+x, 0) // 6 [1,2,3].find(x => x > 1) // 2 [1,2,3].includes(2) // true
-🗃️
-9. Objects — Объектҳо
-const talaba = { ism: "Ahmad", sin: 22, дарс: ["JS", "HTML", "CSS"], сором() { return "Ман " + this.ism; } }; talaba.ism // "Ahmad" talaba["sin"] // 22 talaba.сором() // "Ман Ahmad" talaba.шаҳр = "Душанбе"; // нав қӯшидан delete talaba.sin; // ҳазф кардан // Destructuring const { ism, sin } = talaba; // Spread operator const нав = { ...talaba, синф: "A1" };
-🖥️
-10. DOM — HTML-ро идора кун
-// Элементро гир document.getElementById("id_ман") document.querySelector(".класс") document.querySelectorAll("p") // Матнро тағйир деҳ const el = document.getElementById("sarlavha"); el.textContent = "Салом Ҷаҳон!"; el.innerHTML = "<b>Ғафс матн</b>"; // Стилро тағйир деҳ el.style.color = "red"; el.style.fontSize = "24px"; // Класс el.classList.add("фаъол"); el.classList.remove("фаъол"); el.classList.toggle("фаъол"); // Элементи нав сохт const div = document.createElement("div"); div.textContent = "Нав!"; document.body.appendChild(div);
-🖱️
-11. Events — Ҳодисаҳо
-const btn = document.getElementById("tugma"); // Клик btn.addEventListener("click", () => { console.log("Тугма пахш шуд!"); }); // Input тағйир const input = document.querySelector("input"); input.addEventListener("input", (e) => { console.log(e.target.value); }); // Саҳифа бор шуд document.addEventListener("DOMContentLoaded", () => { console.log("Саҳифа тайёр!"); });
-📝 Маъмултарин ҳодисаҳо: click, input, change, submit, keydown, mouseover, load
-⏳
-12. Async / Await — Ваъда
-1
+// Null — пусто (намеренно)
+let natija = null;
+
+// Undefined — не задано
+let noma;
+console.log(noma); // undefined
+
+Проверить тип:
+
+jstypeof "salom"   // "string"
+typeof 42        // "number"
+typeof true      // "boolean"
+typeof []        // "object"
+typeof null      // "object" (особенность JS!)
+
+
+4. Операторы — Operators
+
+Арифметические
+
+js5 + 3    // 8
+10 - 4   // 6
+4 * 3    // 12
+10 / 2   // 5
+10 % 3   // 1 (остаток)
+2 ** 3   // 8 (степень)
+
+Сравнение
+
+js5 == "5"   // true  — нестрогое (не рекомендуется)
+5 === "5"  // false — строгое ✅
+5 !== 3    // true
+5 > 3      // true
+5 >= 5     // true
+
+Логические
+
+jstrue && false  // false — И
+true || false  // true  — ИЛИ
+!true          // false — НЕ
+
+
+5. Условия — if / else / switch
+
+if / else if / else
+
+jslet ball = 85;
+
+if (ball >= 90) {
+  console.log("Отлично!");
+} else if (ball >= 70) {
+  console.log("Хорошо!");
+} else {
+  console.log("Попробуй ещё!");
+}
+
+Тернарный оператор
+
+jslet natija = ball >= 70 ? "Сдал" : "Не сдал";
+
+switch
+
+jslet kun = "Понедельник";
+
+switch (kun) {
+  case "Понедельник":
+    console.log("Начало недели");
+    break;
+  case "Пятница":
+    console.log("Конец недели");
+    break;
+  default:
+    console.log("Другой день");
+}
+
+
+6. Циклы — Loops
+
+for
+
+jsfor (let i = 0; i < 5; i++) {
+  console.log(i); // 0, 1, 2, 3, 4
+}
+
+while
+
+jslet i = 0;
+while (i < 3) {
+  console.log(i);
+  i++;
+}
+
+for...of — для массивов
+
+jsconst mevalar = ["себ", "нок", "анор"];
+
+for (let meva of mevalar) {
+  console.log(meva);
+}
+
+for...in — для объектов
+
+jsconst obj = { a: 1, b: 2, c: 3 };
+
+for (let kalit in obj) {
+  console.log(kalit, obj[kalit]);
+}
+
+
+7. Функции — Functions
+
+Обычная функция
+
+jsfunction salom(ism) {
+  return "Привет, " + ism + "!";
+}
+
+console.log(salom("Fotima")); // Привет, Fotima!
+
+Стрелочная функция (ES6)
+
+jsconst salom = (ism) => "Привет, " + ism + "!";
+
+// Несколько строк
+const yigindi = (a, b) => {
+  return a + b;
+};
+
+Параметры по умолчанию
+
+jsfunction xushomadid(ism = "Гость") {
+  return "Добро пожаловать, " + ism;
+}
+
+xushomadid();          // Добро пожаловать, Гость
+xushomadid("Ahmad");   // Добро пожаловать, Ahmad
+
+
+8. Массивы — Arrays
+
+jsconst mevalar = ["себ", "нок", "анор"];
+
+mevalar[0]             // "себ"
+mevalar.length         // 3
+mevalar.push("лимон")  // добавить в конец
+mevalar.pop()          // удалить с конца
+mevalar.shift()        // удалить с начала
+mevalar.unshift("узум") // добавить в начало
+
+Основные методы
+
+js// map() — преобразовать каждый элемент
+[1, 2, 3].map(x => x * 2)         // [2, 4, 6]
+
+// filter() — отфильтровать
+[1, 2, 3, 4].filter(x => x > 2)   // [3, 4]
+
+// reduce() — свернуть в одно значение
+[1, 2, 3].reduce((s, x) => s + x, 0) // 6
+
+// find() — найти первый элемент
+[1, 2, 3].find(x => x > 1)        // 2
+
+// includes() — проверить наличие
+[1, 2, 3].includes(2)             // true
+
+// forEach() — перебрать
+[1, 2, 3].forEach(x => console.log(x))
+
+// sort() — сортировка
+[3, 1, 2].sort((a, b) => a - b)   // [1, 2, 3]
+
+
+9. Объекты — Objects
+
+jsconst talaba = {
+  ism: "Ahmad",
+  yosh: 22,
+  darslar: ["JS", "HTML", "CSS"],
+  salom() {
+    return "Я " + this.ism;
+  }
+};
+
+talaba.ism            // "Ahmad"
+talaba["yosh"]        // 22
+talaba.salom()        // "Я Ahmad"
+talaba.shahar = "Душанбе"; // добавить поле
+delete talaba.yosh;   // удалить поле
+
+Деструктуризация
+
+jsconst { ism, yosh } = talaba;
+
+Spread оператор
+
+jsconst yangi = { ...talaba, sinf: "A1" };
+
+
+10. DOM — управление HTML
+
+js// Получить элемент
+const el = document.getElementById("sarlavha");
+const el = document.querySelector(".klass");
+const els = document.querySelectorAll("p");
+
+// Изменить текст
+el.textContent = "Привет, мир!";
+el.innerHTML = "<b>Жирный текст</b>";
+
+// Изменить стиль
+el.style.color = "red";
+el.style.fontSize = "24px";
+
+// Работа с классами
+el.classList.add("faol");
+el.classList.remove("faol");
+el.classList.toggle("faol");
+
+// Создать новый элемент
+const div = document.createElement("div");
+div.textContent = "Новый!";
+document.body.appendChild(div);
+
+
+11. События — Events
+
+jsconst btn = document.getElementById("tugma");
+
+// Клик
+btn.addEventListener("click", () => {
+  console.log("Кнопка нажата!");
+});
+
+// Изменение input
+const input = document.querySelector("input");
+input.addEventListener("input", (e) => {
+  console.log(e.target.value);
+});
+
+// Загрузка страницы
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Страница готова!");
+});
+
+Часто используемые события:
+
+СобытиеКогдаclickклик мышьюinputизменение поля вводаchangeизменение значенияsubmitотправка формыkeydownнажатие клавишиmouseoverнаведение мышиloadзагрузка страницы
+
+
+12. Async / Await
+
 Promise
-const ваъда = new Promise((resolve, reject) => { let муваффақ = true; if (муваффақ) resolve("Кор кард!"); else reject("Хато!"); }); ваъда .then(natija => console.log(natija)) .catch(хато => console.log(хато));
-2
-Async / Await — осонтар
-async function маълумотГир() { try { const javob = await fetch("https://api.example.com"); const data = await javob.json(); console.log(data); } catch (хато) { console.log("Хато:", хато); } }
-✨
-13. ES6+ — Хусусиятҳои муосир
-// Template literals const ism = "Ahmad"; console.log(`Салом, ${ism}! Синат ${22} аст.`); // Destructuring const [a, b, c] = [1, 2, 3]; const { ism: nom, sin } = { ism: "Ali", sin: 25 }; // Spread & Rest const arr1 = [1, 2]; const arr2 = [...arr1, 3, 4]; // [1,2,3,4] function ҷамъ(...рақамҳо) { return рақамҳо.reduce((s, x) => s + x, 0); } // Optional chaining const шаҳр = корбар?.манзил?.шаҳр; // Nullish coalescing const ном = корбар ?? "Меҳмон";
-🗺️
-14. Роҳи омӯзиш — қадам ба қадам
-1
-Variables, Types, Operators
-Асос — ҳамаи чиз аз инҷо оғоз мешавад. Ин қадамро нағз омӯз.
 
-2
-if/else, loops, functions
-Мантиқи барнома — шартҳо, давраҳо, функсияҳо.
+jsconst vaada = new Promise((resolve, reject) => {
+  let muvaffaq = true;
+  if (muvaffaq) resolve("Успешно!");
+  else reject("Ошибка!");
+});
 
-3
-Arrays & Objects
-Маълумотро нигоҳ дор ва идора кун.
+vaada
+  .then(natija => console.log(natija))
+  .catch(xato => console.log(xato));
 
-4
-DOM manipulation & Events
-HTML-ро бо JS зинда кун — тугмаҳо, форма, анимация.
+Async / Await — проще и чище
 
-5
-Async, Fetch, API
-Серверҳо бо JS — маълумот аз интернет гир.
+jsasync function malumotOl() {
+  try {
+    const javob = await fetch("https://api.example.com/data");
+    const data = await javob.json();
+    console.log(data);
+  } catch (xato) {
+    console.log("Ошибка:", xato);
+  }
+}
 
-6
-React / Vue / Node.js
-Сатҳи баланд — фреймворкҳо ва backend.
+malumotOl();
+
+
+13. ES6+ — современные возможности
+
+Шаблонные строки
+
+jsconst ism = "Ahmad";
+console.log(`Привет, ${ism}! Тебе ${22} лет.`);
+
+Деструктуризация
+
+js// Массив
+const [a, b, c] = [1, 2, 3];
+
+// Объект
+const { ism, yosh } = { ism: "Ali", yosh: 25 };
+
+Spread и Rest
+
+js// Spread — разворачивает
+const arr1 = [1, 2];
+const arr2 = [...arr1, 3, 4]; // [1, 2, 3, 4]
+
+// Rest — собирает
+function yigindi(...raqamlar) {
+  return raqamlar.reduce((s, x) => s + x, 0);
+}
+
+Optional Chaining
+
+jsconst shahar = foydalanuvchi?.manzil?.shahar;
+// не выдаёт ошибку если manzil не существует
+
+Nullish Coalescing
+
+jsconst nom = foydalanuvchi ?? "Гость";
+// "Гость" только если foydalanuvchi — null или undefined
+
+
+14. Путь обучения — Roadmap
+
+Шаг 1 → Variables, Types, Operators
+         (Основа — начни отсюда)
+
+Шаг 2 → if/else, Loops, Functions
+         (Логика программы)
+
+Шаг 3 → Arrays & Objects
+         (Хранение данных)
+
+Шаг 4 → DOM & Events
+         (Оживи HTML с JS)
+
+Шаг 5 → Async, Fetch, API
+         (Данные из интернета)
+
+Шаг 6 → React / Vue / Node.js
+         (Продвинутый уровень)
+
+
+Теги
 
 Variables Functions Arrays Objects DOM Events Async/Await ES6+ Node.js React
-Тартиб додааст JavaScript Guide TJ — аз аввал то охир 🚀
+
+
+JavaScript — самый популярный язык программирования в мире. Учись каждый день! 🚀
